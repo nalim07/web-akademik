@@ -106,7 +106,7 @@
                         <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
                             <div class="icon"><box-icon type='solid' name='group'></box-icon></div>
                             <h4 class="title"><a href="">PPDB</a></h4>
-                            <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+                            <p class="description">Penerimaan Peserta Didik Baru</p>
                         </div>
                     </div>
 
