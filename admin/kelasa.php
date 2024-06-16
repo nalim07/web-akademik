@@ -73,7 +73,7 @@ $sql = mysqli_query($conn, $query);
                                 echo "<td>" . $result['wali_siswa'] . "</td>";
                                 echo "<td>";
                                 echo "<a href='edit_siswa.php?id_siswa=" . $result['id'] . "' class='btn btn-info btn-sm'><i class='bi bi-pencil-square' title='Edit'></i></a>&nbsp;";
-                                echo "<a href='hapus_siswa.php?id_siswa=" . $result['id'] . "' class='btn btn-danger btn-sm' onclick='return confirm(\"Apakah Anda yakin ingin menghapus data ini?\");'><i class='bi bi-trash' title='Hapus'></i></a>";
+                                echo "<a href='hapus_siswa.php?id=" . $result['id'] . "' class='btn btn-danger btn-sm' onclick='return confirm(\"Apakah Anda yakin ingin menghapus data ini?\");'><i class='bi bi-trash' title='hapus'></i></a>";
                                 echo "</td>";
                                 echo "</tr>";
                             }

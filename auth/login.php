@@ -14,7 +14,7 @@ if (isset($_POST["login"])) {
     $password = $_POST["password"];
 
     $sql = "SELECT * FROM user WHERE 
-    username = '$username'";
+    username = '$username' AND password = '$password'";
 
     $result = $conn->query($sql);
 

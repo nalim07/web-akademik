@@ -99,7 +99,7 @@ require_once 'template_admin/navbar.php';
                     <label for="wali_siswa" class="form-label">Wali Siswa</label>
                     <input type="text" class="form-control" id="wali_siswa" name="wali_siswa" required>
                 </div>
-                <button type="submit" class="btn btn-primary">Tambah</button>
+                <button type="submit" class="btn btn-primary" data-bs-toggle="button">Tambah</button>
             </form>
         </div>
     </div>
