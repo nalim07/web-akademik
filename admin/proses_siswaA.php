@@ -1,12 +1,12 @@
 <?php
 
 require_once '../koneksi.php';
-// session_start();
+session_start();
 
-// if (!isset($_SESSION["sslogin"])) {
-//     header("location: ../auth/login.php");
-//     exit;
-// }
+if (!isset($_SESSION["sslogin"])) {
+    header("location: ../auth/login.php");
+    exit;
+}
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nama_siswa = $_POST['nama_siswa'];
@@ -32,7 +32,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "<script>
         alert('Data gagal ditambahkan!');
         document.location.href = 'kelasa.php';
+<<<<<<< HEAD
         </script>" . mysqli_error($con);
+=======
+    </script>" . mysqli_error($con);
+>>>>>>> origin/main
         return;
     }
 
