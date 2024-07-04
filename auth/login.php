@@ -14,11 +14,7 @@ if (isset($_POST["login"])) {
     $password = $_POST["password"];
 
     $sql = "SELECT * FROM user WHERE 
-<<<<<<< HEAD
     username = '$username' AND password = '$password'";
-=======
-    username = '$username' AND password = '$password'" ;
->>>>>>> origin/main
 
     $result = $conn->query($sql);
 

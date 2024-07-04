@@ -44,8 +44,7 @@
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Daftar Kelas</h6>
-                        <a class="collapse-item" href="kelasa.php">Kelas A</a>
-                        <a class="collapse-item" href="kelasb.php">Kelas B</a>
+                        <a class="collapse-item" href="data_siswa.php">Kelas A</a>
                     </div>
                 </div>
             </li>

@@ -28,8 +28,6 @@ require_once 'template_admin/navbar.php';
             <p>Selamat Datang di Sistem Informasi Akademik TK Aisyiyah Bustanul Athfal Labuan, Anda Login Sebagai <b><?= $_SESSION["ssUser"] ?></b></p>
         </div>
 
-
-
         <div class="row">
         </div>
     </div>

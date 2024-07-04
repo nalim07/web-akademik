@@ -11,8 +11,8 @@ $sql = mysqli_query($conn, $query);
 // Eksekusi query
 if ($sql) {
     echo "Data siswa berhasil dihapus.";
-    // Redirect ke halaman daftar siswa atau halaman lain
-    header("Location: kelasa.php");
+    // Redirect ke halaman daftar siswa
+    header("Location: data_siswa.php");
 } else {
     echo "Gagal menghapus data siswa.";
 }
