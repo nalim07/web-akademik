@@ -24,31 +24,47 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $agama = $_POST['agama'];
     $wali_siswa = $_POST['wali_siswa'];
     $no_hp_wali = $_POST['no_hp_wali'];
-    $foto_siswa = $_FILES['foto_siswa'];
+    $foto_siswa = $_FILES['foto_siswa']['name'];
+    
+    if($foto_siswa != "") {
+        $ekstensi_diperbolehkan = array('png','jpg','jpeg');
+        $x = explode('.', $foto_siswa);
+        $ekstensi = strtolower(end($x));
+        $file_tmp = $_FILES['foto_siswa']['tmp_name'];   
+        $angka_acak = rand(1,999);
+        $nama_gambar_baru = $angka_acak.'-'.$foto_siswa;
 
-    // if ($foto_siswa != '') {
-    //     $url = "tambahsiswa.php";
-    //     $foto_siswa = uploadimg($url);
-    // } else {
-    //     $foto_siswa = '../assets/img/default.png';
-    // }
+        if(in_array($ekstensi, $ekstensi_diperbolehkan) === true)  {     
+            move_uploaded_file($file_tmp, '../uploads/'.$nama_gambar_baru);
+            
+            $query = "INSERT INTO siswa_kelasa (nama_siswa, nis, tanggal_masuk, kelas, tempat_lahir, tanggal_lahir, jenis_kelamin, alamat, desa_kelurahan, kecamatan, kab_kota, provinsi, agama, wali_siswa, no_hp_wali, foto_siswa) VALUES ('$nama_siswa', '$nis', '$tanggal_masuk', '$kelas', '$tempat_lahir', '$tanggal_lahir', '$jenis_kelamin', '$alamat', '$desa_kelurahan', '$kecamatan', '$kab_kota', '$provinsi', '$agama', '$wali_siswa', '$no_hp_wali', '$nama_gambar_baru')";
+            $result = mysqli_query($conn, $query);
 
-    $sql = "INSERT INTO siswa_kelasa (nama_siswa, nis, tanggal_masuk, kelas, tempat_lahir, tanggal_lahir, jenis_kelamin, alamat, desa_kelurahan, kecamatan, kab_kota, provinsi, agama, wali_siswa, no_hp_wali, foto_siswa) 
-            VALUES ('$nama_siswa', '$nis', '$tanggal_masuk', '$kelas', '$tempat_lahir', '$tanggal_lahir', '$jenis_kelamin', '$alamat', '$desa_kelurahan', '$kecamatan', '$kab_kota', '$provinsi', '$agama', '$wali_siswa', '$no_hp_wali', '$foto_siswa')";
-
-    if (mysqli_query($conn, $sql)) {
-        echo "<script>
-                alert('Data Berhasil ditambahkan!');
-                document.location.href = 'data_siswa.php';
-            </script>";
-        return;
+            if(!$result){
+                die ("Query gagal dijalankan: ".mysqli_errno($conn)." - ".mysqli_error($conn));
+            } else {
+                // Ganti alert dengan set session untuk pesan sukses
+                $_SESSION['success_message'] = "Data berhasil ditambah.";
+                header("Location: data_siswa.php");
+                exit();
+            }
+        } else {     
+            echo "<script>alert('Ekstensi gambar yang boleh hanya jpg atau png.');window.location='tambah_siswa.php';</script>";
+        }
     } else {
-        echo "<script>
-        alert('Data gagal ditambahkan!');
-        document.location.href = 'data_siswa.php';
-        </script>" . mysqli_error($con);
-        return;
-    }
+        // Jika tidak ada foto yang diupload
+        $query = "INSERT INTO siswa_kelasa (nama_siswa, nis, tanggal_masuk, kelas, tempat_lahir, tanggal_lahir, jenis_kelamin, alamat, desa_kelurahan, kecamatan, kab_kota, provinsi, agama, wali_siswa, no_hp_wali) VALUES ('$nama_siswa', '$nis', '$tanggal_masuk', '$kelas', '$tempat_lahir', '$tanggal_lahir', '$jenis_kelamin', '$alamat', '$desa_kelurahan', '$kecamatan', '$kab_kota', '$provinsi', '$agama', '$wali_siswa', '$no_hp_wali')";
+        $result = mysqli_query($conn, $query);
 
-    mysqli_close($conn);
+        if(!$result){
+            die ("Query gagal dijalankan: ".mysqli_errno($conn)." - ".mysqli_error($conn));
+        } else {
+            // Ganti alert dengan set session untuk pesan sukses
+            $_SESSION['success_message'] = "Data berhasil ditambah.";
+            header("Location: data_siswa.php");
+            exit();
+        }
+    }
 }
+
+mysqli_close($conn);

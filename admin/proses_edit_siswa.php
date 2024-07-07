@@ -1,8 +1,17 @@
 <?php
 require_once '../koneksi.php';
+require_once 'logging.php';
+
+session_start();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Ambil data yang dikirim melalui form
+    // Periksa apakah id_siswa ada dalam $_POST
+    if (!isset($_POST['id_siswa'])) {
+        echo json_encode(['status' => 'error', 'message' => 'ID siswa tidak ditemukan.']);
+        exit;
+    }
+
+    // Ambil semua data dari form
     $id_siswa = $_POST['id_siswa'];
     $nama_siswa = $_POST['nama_siswa'];
     $nis = $_POST['nis'];
@@ -19,116 +28,59 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $agama = $_POST['agama'];
     $wali_siswa = $_POST['wali_siswa'];
     $no_hp_wali = $_POST['no_hp_wali'];
-    $foto_siswa = $_FILES['foto_siswa']['name'];
 
-    $uploadOk = 1;
+    // Persiapkan pernyataan update
+    $stmt = $conn->prepare("UPDATE siswa_kelasa SET 
+        nama_siswa = ?, nis = ?, tanggal_masuk = ?, kelas = ?, tempat_lahir = ?, tanggal_lahir = ?, jenis_kelamin = ?, 
+        alamat = ?, desa_kelurahan = ?, kecamatan = ?, kab_kota = ?, provinsi = ?, agama = ?, wali_siswa = ?, 
+        no_hp_wali = ? WHERE id = ?");
 
-    // Upload foto_siswa jika ada file yang diunggah
-    if (!empty($foto_siswa)) {
-        $target_dir = "uploads/";
-        $target_file = $target_dir . basename($_FILES["foto_siswa"]["name"]);
-        $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+    $stmt->bind_param(
+        "sssssssssssssssi",
+        $nama_siswa,
+        $nis,
+        $tanggal_masuk,
+        $kelas,
+        $tempat_lahir,
+        $tanggal_lahir,
+        $jenis_kelamin,
+        $alamat,
+        $desa_kelurahan,
+        $kecamatan,
+        $kab_kota,
+        $provinsi,
+        $agama,
+        $wali_siswa,
+        $no_hp_wali,
+        $id_siswa
+    );
 
-        // Check if image file is a actual image or fake image
-        $check = getimagesize($_FILES["foto_siswa"]["tmp_name"]);
-        if ($check !== false) {
-            $uploadOk = 1;
-        } else {
-            echo "File is not an image.";
-            $uploadOk = 0;
-        }
-
-        // Check file size
-        if ($_FILES["foto_siswa"]["size"] > 500000) {
-            echo "Sorry, your file is too large.";
-            $uploadOk = 0;
-        }
-
-        // Allow certain file formats
-        if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif") {
-            echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
-            $uploadOk = 0;
-        }
-
-        // Check if $uploadOk is set to 0 by an error
-        if ($uploadOk == 0) {
-            echo "Sorry, your file was not uploaded.";
-        } else {
-            if (!move_uploaded_file($_FILES["foto_siswa"]["tmp_name"], $target_file)) {
-                echo "Sorry, there was an error uploading your file.";
-                $uploadOk = 0;
-            }
-        }
-    }
-
-    // Prepare an update statement
-    if ($uploadOk == 1) {
-        $stmt = $conn->prepare("UPDATE siswa_kelasa SET 
-            nama_siswa = ?, nis = ?, tanggal_masuk = ?, kelas = ?, tempat_lahir = ?, tanggal_lahir = ?, jenis_kelamin = ?, 
-            alamat = ?, desa_kelurahan = ?, kecamatan = ?, kab_kota = ?, provinsi = ?, agama = ?, wali_siswa = ?, 
-            no_hp_wali = ?, foto_siswa = ? WHERE id = ?");
-
-        // Bind variables to the prepared statement as parameters
-        $stmt->bind_param(
-            "ssssssssssssssssi",
-            $nama_siswa,
-            $nis,
-            $tanggal_masuk,
-            $kelas,
-            $tempat_lahir,
-            $tanggal_lahir,
-            $jenis_kelamin,
-            $alamat,
-            $desa_kelurahan,
-            $kecamatan,
-            $kab_kota,
-            $provinsi,
-            $agama,
-            $wali_siswa,
-            $no_hp_wali,
-            $foto_siswa,
-            $id_siswa
-        );
-    } else {
-        $stmt = $conn->prepare("UPDATE siswa_kelasa SET 
-            nama_siswa = ?, nis = ?, tanggal_masuk = ?, kelas = ?, tempat_lahir = ?, tanggal_lahir = ?, jenis_kelamin = ?, 
-            alamat = ?, desa_kelurahan = ?, kecamatan = ?, kab_kota = ?, provinsi = ?, agama = ?, wali_siswa = ?, 
-            no_hp_wali = ? WHERE id = ?");
-
-        // Bind variables to the prepared statement as parameters
-        $stmt->bind_param(
-            "sssssssssssssssi",
-            $nama_siswa,
-            $nis,
-            $tanggal_masuk,
-            $kelas,
-            $tempat_lahir,
-            $tanggal_lahir,
-            $jenis_kelamin,
-            $alamat,
-            $desa_kelurahan,
-            $kecamatan,
-            $kab_kota,
-            $provinsi,
-            $agama,
-            $wali_siswa,
-            $no_hp_wali,
-            $id_siswa
-        );
-    }
-
-    // Attempt to execute the prepared statement
+    // Coba eksekusi pernyataan yang telah disiapkan
     if ($stmt->execute()) {
-        // Jika berhasil disimpan, redirect ke halaman data siswa
-        header("location: data_siswa.php");
-        exit;
+        if ($stmt->affected_rows > 0) {
+            echo json_encode(['success' => true]);
+        } else {
+            echo json_encode(['success' => false, 'message' => 'Tidak ada perubahan data']);
+        }
     } else {
-        echo "Error: " . $stmt->error;
+        echo json_encode(['success' => false, 'message' => 'Gagal mengupdate data: ' . $stmt->error]);
     }
 
-    // Close statement
+    // Tutup statement
     $stmt->close();
 
-    // Tutup koneksi database
-    mysqli_close($conn);
+    // Setelah proses update
+    $check_query = "SELECT * FROM siswa_kelasa WHERE id = ?";
+    $check_stmt = $conn->prepare($check_query);
+    $check_stmt->bind_param("i", $id_siswa);
+    $check_stmt->execute();
+    $result = $check_stmt->get_result();
+    $updated_data = $result->fetch_assoc();
+
+    logMessage("Data setelah update: " . print_r($updated_data, true));
+
+    $check_stmt->close();
 }
+
+// Tutup koneksi database
+mysqli_close($conn);

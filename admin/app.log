@@ -1,0 +1,200 @@
+Data setelah update: Data setelah update: Data setelah update: Array
+(
+    [id] => 12
+    [nama_siswa] => Siti Ropeah
+    [nis] => 0000000001
+    [tanggal_masuk] => 2024-06-30
+    [kelas] => A
+    [tempat_lahir] => Labuan
+    [tanggal_lahir] => 2021-12-28
+    [jenis_kelamin] => P
+    [alamat] => Kp. margasari
+    [desa_kelurahan] => Kopok
+    [kecamatan] => Labuan
+    [kab_kota] => Pandeglang
+    [provinsi] => Banten
+    [agama] => Islam
+    [wali_siswa] => fulan
+    [no_hp_wali] => 089643567123
+    [foto_siswa] => 668a3e0e2b251_students.png
+)
+Data setelah update: Array
+(
+    [id] => 12
+    [nama_siswa] => Siti Ropeah
+    [nis] => 0000000001
+    [tanggal_masuk] => 2024-06-30
+    [kelas] => A
+    [tempat_lahir] => Labuan
+    [tanggal_lahir] => 2021-12-28
+    [jenis_kelamin] => P
+    [alamat] => Kp. margasari
+    [desa_kelurahan] => Kopok
+    [kecamatan] => Labuan
+    [kab_kota] => Pandeglang
+    [provinsi] => Banten
+    [agama] => Islam
+    [wali_siswa] => fulan
+    [no_hp_wali] => 089643567123
+    [foto_siswa] => 668a3e0e2b251_students.png
+)
+Data setelah update: Array
+(
+    [id] => 12
+    [nama_siswa] => Siti Ropeah
+    [nis] => 0000000001
+    [tanggal_masuk] => 2024-06-30
+    [kelas] => B
+    [tempat_lahir] => Labuan
+    [tanggal_lahir] => 2021-12-28
+    [jenis_kelamin] => P
+    [alamat] => Kp. margasari
+    [desa_kelurahan] => Kopok
+    [kecamatan] => Labuan
+    [kab_kota] => Pandeglang
+    [provinsi] => Banten
+    [agama] => Islam
+    [wali_siswa] => fulan
+    [no_hp_wali] => 089643567123
+    [foto_siswa] => 668a3e0e2b251_students.png
+)
+Data setelah update: Array
+(
+    [id] => 12
+    [nama_siswa] => Siti Ropeah
+    [nis] => 0000000001
+    [tanggal_masuk] => 2024-06-30
+    [kelas] => B
+    [tempat_lahir] => Labuan
+    [tanggal_lahir] => 2021-12-28
+    [jenis_kelamin] => P
+    [alamat] => Kp. margasari rt/rw 001/002
+    [desa_kelurahan] => Labuan
+    [kecamatan] => Labuan
+    [kab_kota] => Pandeglang
+    [provinsi] => Banten
+    [agama] => Islam
+    [wali_siswa] => fulan
+    [no_hp_wali] => 089643567123
+    [foto_siswa] => foto_12_1720352216.jpg
+)
+Data setelah update: Array
+(
+    [id] => 12
+    [nama_siswa] => Siti Ropeah
+    [nis] => 0000000001
+    [tanggal_masuk] => 2024-06-30
+    [kelas] => A
+    [tempat_lahir] => Labuan
+    [tanggal_lahir] => 2021-12-28
+    [jenis_kelamin] => P
+    [alamat] => Kp. margasari rt/rw 001/002
+    [desa_kelurahan] => Cigondang
+    [kecamatan] => Labuan
+    [kab_kota] => Pandeglang
+    [provinsi] => Banten
+    [agama] => Islam
+    [wali_siswa] => Asep
+    [no_hp_wali] => 089643567123
+    [foto_siswa] => foto_12_1720352216.jpg
+)
+Data setelah update: Array
+(
+    [id] => 12
+    [nama_siswa] => Siti Ropeah
+    [nis] => 0000000001
+    [tanggal_masuk] => 2024-06-30
+    [kelas] => A
+    [tempat_lahir] => Serang
+    [tanggal_lahir] => 2021-12-28
+    [jenis_kelamin] => P
+    [alamat] => Kp. margasari rt/rw 001/002
+    [desa_kelurahan] => Cigondang
+    [kecamatan] => Labuan
+    [kab_kota] => Pandeglang
+    [provinsi] => Banten
+    [agama] => Islam
+    [wali_siswa] => Asep
+    [no_hp_wali] => 089643567123
+    [foto_siswa] => foto_12_1720352216.jpg
+)
+Data setelah update: Array
+(
+    [id] => 12
+    [nama_siswa] => Siti Ropeah
+    [nis] => 0000000001
+    [tanggal_masuk] => 2024-06-30
+    [kelas] => A
+    [tempat_lahir] => Serang
+    [tanggal_lahir] => 2021-12-28
+    [jenis_kelamin] => P
+    [alamat] => Kp. margasari 
+    [desa_kelurahan] => Cigondang
+    [kecamatan] => Labuan
+    [kab_kota] => Pandeglang
+    [provinsi] => Banten
+    [agama] => Islam
+    [wali_siswa] => Asep
+    [no_hp_wali] => 089643567123
+    [foto_siswa] => foto_12_1720352216.jpg
+)
+Data setelah update: Array
+(
+    [id] => 20
+    [nama_siswa] => Rohman
+    [nis] => 0000000005
+    [tanggal_masuk] => 2024-06-30
+    [kelas] => A
+    [tempat_lahir] => Serang
+    [tanggal_lahir] => 2002-11-11
+    [jenis_kelamin] => L
+    [alamat] => Kp. Kertasana
+    [desa_kelurahan] => panggugnjati
+    [kecamatan] => Taktakan
+    [kab_kota] => Serang
+    [provinsi] => Banten
+    [agama] => Islam
+    [wali_siswa] => Yati
+    [no_hp_wali] => 0819234567
+    [foto_siswa] => 781-logo_na.png
+)
+Data setelah update: Array
+(
+    [id] => 13
+    [nama_siswa] => Siti Maemunah
+    [nis] => 0000000002
+    [tanggal_masuk] => 2024-07-08
+    [kelas] => B
+    [tempat_lahir] => Labuan
+    [tanggal_lahir] => 2018-01-02
+    [jenis_kelamin] => P
+    [alamat] => Kp. Kertasana
+    [desa_kelurahan] => Kopok
+    [kecamatan] => Labuan
+    [kab_kota] => Pandeglang
+    [provinsi] => Banten
+    [agama] => Islam
+    [wali_siswa] => fulan
+    [no_hp_wali] => 089643567123
+    [foto_siswa] => foto_13_1720338033.png
+)
+Data setelah update: Array
+(
+    [id] => 12
+    [nama_siswa] => Siti Ropeah
+    [nis] => 0000000001
+    [tanggal_masuk] => 2024-06-30
+    [kelas] => A
+    [tempat_lahir] => Serang
+    [tanggal_lahir] => 2021-12-28
+    [jenis_kelamin] => P
+    [alamat] => Kp. margasari 
+    [desa_kelurahan] => Cigondang
+    [kecamatan] => Labuan
+    [kab_kota] => Pandeglang
+    [provinsi] => Banten
+    [agama] => Konghucu
+    [wali_siswa] => Asep
+    [no_hp_wali] => 089643567123
+    [foto_siswa] => foto_12_1720352216.jpg
+)

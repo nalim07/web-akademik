@@ -1,0 +1,110 @@
+[2024-07-06 17:37:35] Data yang diterima: Array
+(
+    [id_siswa] => 
+    [nama_siswa] => Siti Rahayu
+    [nis] => 0000000001
+    [kelas] => A
+    [tanggal_masuk] => 2024-06-30
+    [tempat_lahir] => Labuan
+    [provinsi] => Banten
+    [tanggal_lahir] => 2021-12-28
+    [kab_kota] => Pandeglang
+    [agama] => Islam
+    [kecamatan] => Labuan
+    [jenis_kelamin] => P
+    [desa_kelurahan] => Kopok
+    [wali_siswa] => fulan
+    [alamat] => Kp. margasari
+    [no_hp_wali] => 089643567123
+)
+
+[2024-07-06 17:37:35] Query yang dijalankan: 00000
+[2024-07-06 17:37:35] Update berhasil. Affected rows: 0
+[2024-07-06 17:37:59] Data yang diterima: Array
+(
+    [id_siswa] => 
+    [nama_siswa] => Siti Markonah 
+    [nis] => 0000000004
+    [kelas] => B
+    [tanggal_masuk] => 2023-12-12
+    [tempat_lahir] => Serang
+    [provinsi] => Banten
+    [tanggal_lahir] => 2002-01-28
+    [kab_kota] => Pandeglang
+    [agama] => Islam
+    [kecamatan] => Labuan
+    [jenis_kelamin] => P
+    [desa_kelurahan] => Sumur
+    [wali_siswa] => fulan
+    [alamat] => sds
+    [no_hp_wali] => 089643567123
+)
+
+[2024-07-06 17:37:59] Query yang dijalankan: 00000
+[2024-07-06 17:37:59] Update berhasil. Affected rows: 0
+[2024-07-06 17:38:29] Data yang diterima: Array
+(
+    [id_siswa] => 
+    [nama_siswa] => Siti Markonah 
+    [nis] => 0000000004
+    [kelas] => A
+    [tanggal_masuk] => 2023-12-12
+    [tempat_lahir] => Serang
+    [provinsi] => Banten
+    [tanggal_lahir] => 2002-01-28
+    [kab_kota] => Pandeglang
+    [agama] => Islam
+    [kecamatan] => Labuan
+    [jenis_kelamin] => P
+    [desa_kelurahan] => Sumur
+    [wali_siswa] => fulan
+    [alamat] => kp
+    [no_hp_wali] => 089643567123
+)
+
+[2024-07-06 17:38:29] Query yang dijalankan: 00000
+[2024-07-06 17:38:29] Update berhasil. Affected rows: 0
+[2024-07-06 17:39:08] Data yang diterima: Array
+(
+    [id_siswa] => 
+    [nama_siswa] => Siti Markonah 
+    [nis] => 0000000004
+    [kelas] => B
+    [tanggal_masuk] => 2023-12-12
+    [tempat_lahir] => Serang
+    [provinsi] => Banten
+    [tanggal_lahir] => 2002-01-28
+    [kab_kota] => Pandeglang
+    [agama] => Islam
+    [kecamatan] => Labuan
+    [jenis_kelamin] => P
+    [desa_kelurahan] => Sumur
+    [wali_siswa] => fulan
+    [alamat] => kp
+    [no_hp_wali] => 089643567123
+)
+
+[2024-07-06 17:39:08] Query yang dijalankan: 00000
+[2024-07-06 17:39:08] Update berhasil. Affected rows: 0
+[2024-07-06 17:40:15] Data yang diterima: Array
+(
+    [id_siswa] => 
+    [nama_siswa] => Siti Rahayu
+    [nis] => 0000000001
+    [kelas] => B
+    [tanggal_masuk] => 2024-06-30
+    [tempat_lahir] => Labuan
+    [provinsi] => Banten
+    [tanggal_lahir] => 2021-12-28
+    [kab_kota] => Pandeglang
+    [agama] => Islam
+    [kecamatan] => Labuan
+    [jenis_kelamin] => P
+    [desa_kelurahan] => Kopok
+    [wali_siswa] => fulan
+    [alamat] => Kp. margasari
+    [no_hp_wali] => 089643567123
+)
+
+[2024-07-06 17:40:15] Query yang dijalankan: 00000
+[2024-07-06 17:40:15] Update berhasil. Affected rows: 0

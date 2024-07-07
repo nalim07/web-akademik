@@ -12,3 +12,5 @@ $conn = mysqli_connect($servername, $username, $password, $db_name);
     }
 
 mysqli_select_db($conn, $db_name);
+
+define('BASE_URL', 'http://localhost/web_akademik/');  

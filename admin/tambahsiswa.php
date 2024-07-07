@@ -1,6 +1,7 @@
 <?php
 
 require '../koneksi.php';
+require_once '../function.php';
 
 session_start();
 
@@ -149,7 +150,7 @@ require_once 'template_admin/navbar.php';
                     <div class="row">
                         <div class="col-md-6" style="margin-top: 10px;">
                             <label for="foto_siswa" class="form-label">Foto Siswa</label>
-                            <input type="file" class="form-control" id="foto_siswa" name="foto_siswa" required>
+                            <input type="file" class="form-control" id="foto_siswa" name="foto_siswa">
                         </div>
                         <div class="col-md-6 ms-auto" style="margin-top: 10px;">
                             <label for="kecamatan" class="form-label">Kecamatan</label>
@@ -169,7 +170,7 @@ require_once 'template_admin/navbar.php';
                     <div class="row">
                         <div class="col-md-6" style="margin-top: 10px;">
                             <label for="no_hp_wali" class="form-label">No. Handphone Wali Siswa</label>
-                            <input type="text" class="form-control" id="no_hp_wali" name="no_hp_wali" required>
+                            <input type="text" class="form-control" id="no_hp_wali" name="no_hp_wali" maxlength="13" oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 13)" required>
                         </div>
                         <div class="col-md-6 ms-auto" style="margin-top: 10px;">
                             <label for="alamat" class="form-label">Alamat</label>
