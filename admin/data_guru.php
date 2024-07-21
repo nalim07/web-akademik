@@ -53,21 +53,39 @@ require_once 'template_admin/navbar.php';
                                 echo "<td>" . $row['nbm'] . "</td>";
                                 echo "<td>" . $row['namaGuru'] . "</td>";
                                 echo "<td>";
-                                if ($row['jenis_kelamin'] == 'L') {
+                                if ($row['jenisKelamin'] == 'L') {
                                     echo "Laki-laki";
-                                } elseif ($row['jenis_kelamin'] == 'P') {
+                                } elseif ($row['jenisKelamin'] == 'P') {
                                     echo "Perempuan";
                                 } else {
-                                    echo $row['jenis_kelamin']; // Menampilkan nilai asli jika tidak sesuai L atau P
+                                    echo $row['jenisKelamin']; // Menampilkan nilai asli jika tidak sesuai L atau P
                                 }
                                 echo "</td>";
                                 echo "<td>" . $row['alamat'] . "</td>";
                                 echo "<td>
-                        <a href='view_guru.php?id=" . $row['id'] . "' class='btn btn-info btn-sm'>Detail</a>
-                        <a href='edit_guru.php?id=" . $row['id'] . "' class='btn btn-warning btn-sm'>Edit</a>
-                        <a href='hapus_guru.php?id=" . $row['id'] . "' class='btn btn-danger btn-sm' onclick='return confirm(\"Apakah Anda yakin ingin menghapus data ini?\")'>Hapus</a>
+                        <a href='view_guru.php?id_guru=" . $row['id_guru'] . "' class='btn btn-info btn-sm'>Detail</a>
+                        <a href='zEdit_guru.php?id_guru=" . $row['id_guru'] . "' class='btn btn-warning btn-sm'>Edit</a>
+                        <button class='btn btn-danger btn-sm' data-bs-toggle='modal' data-bs-target='#hapusModal" . $row['id_guru'] . "'>Hapus</button>
                       </td>";
                                 echo "</tr>";
+                                // Modal
+                                echo "<div class='modal fade' id='hapusModal" . $row['id_guru'] . "' tabindex='-1' aria-labelledby='hapusModalLabel" . $row['id_guru'] . "' aria-hidden='true'>
+                                        <div class='modal-dialog'>
+                                            <div class='modal-content'>
+                                                <div class='modal-header'>
+                                                    <h5 class='modal-title' id='hapusModalLabel" . $row['id_guru'] . "'>Konfirmasi Hapus</h5>
+                                                    <button type='button' class='btn-close' data-bs-dismiss='modal' aria-label='Close'></button>
+                                                </div>
+                                                <div class='modal-body'>
+                                                    Apakah Anda yakin ingin menghapus data ini?
+                                                </div>
+                                                <div class='modal-footer'>
+                                                    <button type='button' class='btn btn-secondary' data-bs-dismiss='modal'>Batal</button>
+                                                    <a href='hapus_guru.php?id_guru=" . $row['id_guru'] . "' class='btn btn-danger'>Hapus</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>";
                             }
                             ?>
                         </tbody>

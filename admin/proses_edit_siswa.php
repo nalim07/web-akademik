@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $no_hp_wali = $_POST['no_hp_wali'];
 
     // Persiapkan pernyataan update
-    $stmt = $conn->prepare("UPDATE siswa_kelasa SET 
+    $stmt = $conn->prepare("UPDATE tbl_siswa SET 
         nama_siswa = ?, nis = ?, tanggal_masuk = ?, kelas = ?, tempat_lahir = ?, tanggal_lahir = ?, jenis_kelamin = ?, 
         alamat = ?, desa_kelurahan = ?, kecamatan = ?, kab_kota = ?, provinsi = ?, agama = ?, wali_siswa = ?, 
         no_hp_wali = ? WHERE id = ?");
@@ -70,7 +70,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->close();
 
     // Setelah proses update
-    $check_query = "SELECT * FROM siswa_kelasa WHERE id = ?";
+    $check_query = "SELECT * FROM tbl_siswa WHERE id = ?";
     $check_stmt = $conn->prepare($check_query);
     $check_stmt->bind_param("i", $id_siswa);
     $check_stmt->execute();

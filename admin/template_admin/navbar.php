@@ -55,10 +55,17 @@
 
             <!-- Nav Item - Nilai Menu -->
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseNilai" aria-expanded="true" aria-controls="collapseNilai">
                     <i class="fas fa-fw fa-clipboard"></i>
                     <span>Nilai Siswa</span>
                 </a>
+                <div id="collapseNilai" class="collapse" aria-labelledby="headingNilai" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Nilai Siswa</h6>
+                        <a class="collapse-item" href="input_nilai.php">Input Nilai</a>
+                        <a class="collapse-item" href="print_nilai.php">Print Nilai</a>
+                    </div>
+                </div>
             </li>
 
             <!-- Nav Item - Tabungan Menu -->
@@ -80,20 +87,20 @@
             <hr class="sidebar-divider">
 
             <!-- Heading -->
-            <div class="sidebar-heading">
+            <!-- <div class="sidebar-heading">
                 Tambahan
-            </div>
+            </div> -->
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
 
             <!-- Nav Item - User Menu -->
-            <li class="nav-item">
+            <!-- <li class="nav-item">
                 <a class="nav-link" href="<?php echo BASE_URL; ?>admin/data_user.php">
                     <i class="fas fa-fw fa-cog"></i>
                     <span>User</span>
                 </a>
-            </li>
+            </li> -->
 
 
             <!-- Sidebar Toggler (Sidebar) -->
@@ -136,12 +143,12 @@
                     <ul class="navbar-nav ml-auto">
 
                         <!-- Nav Item - Search Dropdown (Visible Only XS) -->
-                        <li class="nav-item dropdown no-arrow d-sm-none">
+                        <!-- <li class="nav-item dropdown no-arrow d-sm-none">
                             <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-search fa-fw"></i>
-                            </a>
+                            </a> -->
                             <!-- Dropdown - Messages -->
-                            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
+                            <!-- <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
                                 <form class="form-inline mr-auto w-100 navbar-search">
                                     <div class="input-group">
                                         <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
@@ -153,21 +160,21 @@
                                     </div>
                                 </form>
                             </div>
-                        </li>
+                        </li> -->
 
                         <!-- Nav Item - Alerts -->
                         <li class="nav-item dropdown no-arrow mx-1">
                             <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-bell fa-fw"></i>
                                 <!-- Counter - Alerts -->
-                                <span class="badge badge-danger badge-counter">3+</span>
+                                <span class="badge badge-danger badge-counter"></span>
                             </a>
                             <!-- Dropdown - Alerts -->
                             <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
                                 <h6 class="dropdown-header">
                                     Notifikasi
                                 </h6>
-                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                <!-- <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="mr-3">
                                         <div class="icon-circle bg-primary">
                                             <i class="fas fa-file-alt text-white"></i>
@@ -177,8 +184,8 @@
                                         <div class="small text-gray-500">12 Juli 2024</div>
                                         <span class="font-weight-bold">Laporan bulanan baru siap diunduh!</span>
                                     </div>
-                                </a>
-                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                </a> -->
+                                <!-- <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="mr-3">
                                         <div class="icon-circle bg-success">
                                             <i class="fas fa-donate text-white"></i>
@@ -188,8 +195,8 @@
                                         <div class="small text-gray-500">11 Juli 2024</div>
                                         Rp. 100.000 telah disetorkan ke akun Anda!
                                     </div>
-                                </a>
-                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                </a> -->
+                                <!-- <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="mr-3">
                                         <div class="icon-circle bg-warning">
                                             <i class="fas fa-exclamation-triangle text-white"></i>
@@ -199,20 +206,19 @@
                                         <div class="small text-gray-500">10 Juli 2024</div>
                                         Perbaharui sekarang
                                     </div>
-                                </a>
+                                </a> -->
                                 <a class="dropdown-item text-center small text-gray-500" href="#">Tampilkan Semua Peringatan</a>
                             </div>
                         </li>
 
                         <!-- Nav Item - Messages -->
-                        <li class="nav-item dropdown no-arrow mx-1">
+                        <!-- <li class="nav-item dropdown no-arrow mx-1">
                             <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-envelope fa-fw"></i>
-                                <!-- Counter - Messages -->
                                 <span class="badge badge-danger badge-counter">7</span>
-                            </a>
+                            </a> -->
                             <!-- Dropdown - Messages -->
-                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="messagesDropdown">
+                            <!-- <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="messagesDropdown">
                                 <h6 class="dropdown-header">
                                     Pusat pesan
                                 </h6>
@@ -259,7 +265,7 @@
                                 </a>
                                 <a class="dropdown-item text-center small text-gray-500" href="#">Baca Pesan Lainnya</a>
                             </div>
-                        </li>
+                        </li> -->
 
                         <div class="topbar-divider d-none d-sm-block"></div>
 

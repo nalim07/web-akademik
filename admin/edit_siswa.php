@@ -15,7 +15,7 @@ require_once 'template_admin/navbar.php';
 // Tambahkan kode berikut untuk mengambil data siswa
 if (isset($_GET['id'])) {
     $id_siswa = $_GET['id'];
-    $query = "SELECT * FROM siswa_kelasa WHERE id = ?";
+    $query = "SELECT * FROM tbl_siswa WHERE id = ?";
     $stmt = $conn->prepare($query);
     $stmt->bind_param("i", $id_siswa);
     $stmt->execute();
@@ -54,6 +54,7 @@ if (isset($_GET['id'])) {
         <div class="card-body">
             <form id="editSiswaForm" action="javascript:void(0);" method="POST" enctype="multipart/form-data">
                 <div class="container-fluid">
+                    <h6 class="my-3"><b>A. Edit Data Siswa</b></h6>
                     <div class="row">
                         <input type="hidden" name="id_siswa" value="<?php echo $id_siswa; ?>">
                         <div class="col-md-6">
@@ -168,8 +169,8 @@ if (isset($_GET['id'])) {
                     </div>
                     <div class="row">
                         <div class="col-md-6" style="margin-top: 10px;">
-                            <label for="wali_siswa" class="form-label">Wali Siswa</label>
-                            <input type="text" class="form-control" id="wali_siswa" name="wali_siswa" value="<?= $siswa['wali_siswa']; ?>" required>
+                            <label for="alamat" class="form-label">Alamat</label>
+                            <textarea class="form-control" id="alamat" name="alamat" required><?= $siswa['alamat']; ?></textarea>
                         </div>
                         <div class="col-md-6 ms-auto" style="margin-top: 10px;">
                             <label for="kecamatan" class="form-label">Kecamatan</label>
@@ -177,22 +178,56 @@ if (isset($_GET['id'])) {
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-6" style="margin-top: 10px;">
-                            <label for="no_hp_wali" class="form-label">No. Handphone Wali Siswa</label>
-                            <input type="text" class="form-control" id="no_hp_wali" name="no_hp_wali" value="<?= $siswa['no_hp_wali']; ?>" required>
-                        </div>
+
                         <div class="col-md-6 ms-auto" style="margin-top: 10px;">
                             <label for="desa_kelurahan" class="form-label">Desa/Kelurahan</label>
                             <input type="text" class="form-control" id="desa_kelurahan" name="desa_kelurahan" value="<?= $siswa['desa_kelurahan']; ?>" required>
                         </div>
                     </div>
 
-                    <div class="form-group" style="margin-top: 10px;">
-                        <label for="alamat" class="form-label">Alamat</label>
-                        <textarea class="form-control" id="alamat" name="alamat" required><?= $siswa['alamat']; ?></textarea>
+                    <div class="row">
+                        <div class="col-md-6" style="margin-top: 10px;">
+                            <label for="wali_siswa" class="form-label">Wali Siswa</label>
+                            <input type="text" class="form-control" id="wali_siswa" name="wali_siswa" value="<?= $siswa['wali_siswa']; ?>">
+                        </div>
+                        <div class="col-md-6 ms-auto" style="margin-top: 10px;">
+                            <label for="no_hp_wali" class="form-label">No. Handphone Wali Siswa</label>
+                            <input type="text" class="form-control" id="no_hp_wali" name="no_hp_wali" value="<?= $siswa['no_hp_wali']; ?>">
+                        </div>
+                    </div>
+                    <hr>
+                    <h6 class="my-3"><b>B. Edit Data Orang Tua</b></h6>
+                    <div class="row">
+                        <div class="col-md-6" style="margin-top: 10px;">
+                            <label for="nama_ayah" class="form-label">Nama Ayah Kandung</label>
+                            <input type="text" class="form-control" id="nama_ayah" name="nama_ayah" value="<?= $siswa['nama_ayah']; ?>" required>
+                        </div>
+                        <div class="col-md-6" style="margin-top: 10px;">
+                            <label for="nama_ibu" class="form-label">Nama Ibu Kandung</label>
+                            <input type="text" class="form-control" id="nama_ibu" name="nama_ibu" value="<?= $siswa['nama_ibu']; ?>" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 ms-auto" style="margin-top: 10px;">
+                            <label for="alamat_ayah" class="form-label">Alamat Ayah</label>
+                            <input type="text" class="form-control" id="alamat_ayah" name="alamat_ayah" value="<?= $siswa['alamat_ayah']; ?>" required>
+                        </div>
+                        <div class="col-md-6 ms-auto" style="margin-top: 10px;">
+                            <label for="alamat_ibu" class="form-label">Alamat Ibu</label>
+                            <input type="text" class="form-control" id="alamat_ibu" name="alamat_ibu" value="<?= $siswa['alamat_ibu']; ?>" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 ms-auto" style="margin-top: 10px;">
+                            <label for="no_hp_ayah" class="form-label">No Handphone Ayah</label>
+                            <input type="text" class="form-control" id="no_hp_ayah" name="no_hp_ayah" value="<?= $siswa['no_hp_ayah']; ?>">
+                        </div>
+                        <div class="col-md-6 ms-auto" style="margin-top: 10px;">
+                            <label for="no_hp_ibu" class="form-label">No Handphone Ibu</label>
+                            <input type="text" class="form-control" id="no_hp_ibu" name="no_hp_ibu" value="<?= $siswa['no_hp_ibu']; ?>">
+                        </div>
                     </div>
 
-                    <hr>
                     <div class="row">
                         <div class="form-group" style="margin-top: 12px;">
                             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#konfirmasiModal">Update</button>
@@ -225,28 +260,28 @@ if (isset($_GET['id'])) {
 </div>
 
 <script>
-function submitForm() {
-    var form = document.getElementById('editSiswaForm');
-    var formData = new FormData(form);
+    function submitForm() {
+        var form = document.getElementById('editSiswaForm');
+        var formData = new FormData(form);
 
-    fetch('proses_edit_siswa.php', {
-        method: 'POST',
-        body: formData
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.success) {
-            // Tambahkan id_siswa ke URL
-            window.location.href = 'data_siswa.php?id=' + <?php echo $id_siswa; ?>;
-        } else {
-            alert('Terjadi kesalahan: ' + data.message);
-        }
-    })
-    .catch(error => {
-        console.error('Error:', error);
-        alert('Terjadi kesalahan saat mengupdate data');
-    });
-}
+        fetch('proses_edit_siswa.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    // Tambahkan id_siswa ke URL
+                    window.location.href = 'data_siswa.php?id=' + <?php echo $id_siswa; ?>;
+                } else {
+                    alert('Terjadi kesalahan: ' + data.message);
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Terjadi kesalahan saat mengupdate data');
+            });
+    }
 </script>
 
 <?php

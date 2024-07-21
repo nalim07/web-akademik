@@ -2,7 +2,7 @@
 require_once '../koneksi.php';
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
-    $query = "SELECT * FROM siswa_kelasa WHERE id = ?";
+    $query = "SELECT * FROM tbl_siswa WHERE id = ?";
     $stmt = mysqli_prepare($conn, $query);
     mysqli_stmt_bind_param($stmt, "i", $id);
     mysqli_stmt_execute($stmt);
@@ -10,4 +10,3 @@ if (isset($_GET['id'])) {
     $data = mysqli_fetch_assoc($result);
     echo json_encode($data);
 }
-?>

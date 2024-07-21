@@ -16,7 +16,7 @@ require_once 'template_admin/navbar.php';
 $id_siswa = $_GET['id_siswa'];
 
 // Query untuk mengambil detail siswa berdasarkan ID
-$query = "SELECT * FROM siswa_kelasa WHERE id = '$id_siswa';";
+$query = "SELECT * FROM tbl_siswa WHERE id = '$id_siswa';";
 $sql = mysqli_query($conn, $query);
 $siswa = mysqli_fetch_assoc($sql);
 
@@ -42,7 +42,7 @@ $siswa = mysqli_fetch_assoc($sql);
                             if (!empty($siswa['foto_siswa']) && file_exists($foto_path)) {
                                 $foto_url = $foto_path;
                             } else {
-                                $foto_url = "../assets/img/profil_default.png"; 
+                                $foto_url = "../assets/img/profil_default.png";
                             }
                             ?>
                             <img class="mb-3" src="<?= $foto_url; ?>" alt="pas_foto" width="105px">

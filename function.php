@@ -1,6 +1,7 @@
-<?php 
+<?php
 
-function uploadFotoSiswa($file) {
+function uploadFotoSiswa($file)
+{
     $target_dir = "public/uploads/";
     $target_file = $target_dir . basename($file["name"]);
     $uploadOk = 1;
@@ -36,7 +37,7 @@ function uploadFotoSiswa($file) {
     // Check if $uploadOk is set to 0 by an error
     if ($uploadOk == 0) {
         echo "Sorry, your file was not uploaded.";
-    // if everything is ok, try to upload file
+        // if everything is ok, try to upload file
     } else {
         if (move_uploaded_file($file["tmp_name"], $target_file)) {
             return $target_file;
@@ -47,7 +48,8 @@ function uploadFotoSiswa($file) {
     return null;
 }
 
-function tampilkanFotoSiswa($fotoPath) {
+function tampilkanFotoSiswa($fotoPath)
+{
     if ($fotoPath) {
         echo '<img src="' . BASE_URL . $fotoPath . '" class="img-fluid rounded" alt="Foto Siswa">';
     } else {
@@ -55,7 +57,8 @@ function tampilkanFotoSiswa($fotoPath) {
     }
 }
 
-function editFotoSiswa($id_siswa, $file) {
+function editFotoSiswa($id_siswa, $file)
+{
     global $conn;
     $result = [
         'success' => false,
@@ -64,9 +67,9 @@ function editFotoSiswa($id_siswa, $file) {
 
     $fotoPath = uploadFotoSiswa($file);
     if ($fotoPath) {
-        $query = "UPDATE siswa_kelasa SET foto_siswa = ? WHERE id = ?";
+        $query = "UPDATE tbl_siswa SET foto_siswa = ? WHERE id = ?";
         $stmt = mysqli_prepare($conn, $query);
-        
+
         if ($stmt) {
             mysqli_stmt_bind_param($stmt, "si", $fotoPath, $id_siswa);
             if (mysqli_stmt_execute($stmt)) {

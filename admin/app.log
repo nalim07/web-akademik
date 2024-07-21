@@ -198,3 +198,29 @@ Data setelah update: Array
     [no_hp_wali] => 089643567123
     [foto_siswa] => foto_12_1720352216.jpg
 )
+Data setelah update: Array
+(
+    [id] => 12
+    [nama_siswa] => Siti Ropeah
+    [nis] => 0000000001
+    [tanggal_masuk] => 2024-06-30
+    [kelas] => A
+    [tempat_lahir] => Serang
+    [tanggal_lahir] => 2021-12-28
+    [jenis_kelamin] => P
+    [alamat] => Kp. margasari 
+    [desa_kelurahan] => Cigondang
+    [kecamatan] => Labuan
+    [kab_kota] => Pandeglang
+    [provinsi] => Banten
+    [agama] => Islam
+    [foto_siswa] => foto_12_1720352216.jpg
+    [nama_ayah] => 
+    [alamat_ayah] => 
+    [no_hp_ayah] => 
+    [nama_ibu] => 
+    [alamat_ibu] => 
+    [no_hp_ibu] => 
+    [wali_siswa] => Asep
+    [no_hp_wali] => 089643567123
+)
