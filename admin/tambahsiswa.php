@@ -35,6 +35,7 @@ require_once 'template_admin/navbar.php';
         <div class="card-body">
             <form action="proses_tambah_siswa.php" method="POST" enctype="multipart/form-data">
                 <div class="container-fluid">
+                    <h6 class="my-3"><b>A. Isi Data Siswa</b></h6>
                     <div class="row">
                         <div class="col-md-6">
                             <label for="nama_siswa" class="form-label">Nama Siswa</label>
@@ -160,7 +161,7 @@ require_once 'template_admin/navbar.php';
                     <div class="row">
                         <div class="col-md-6" style="margin-top: 10px;">
                             <label for="wali_siswa" class="form-label">Wali Siswa</label>
-                            <input type="text" class="form-control" id="wali_siswa" name="wali_siswa" required>
+                            <input type="text" class="form-control" id="wali_siswa" name="wali_siswa">
                         </div>
                         <div class="col-md-6 ms-auto" style="margin-top: 10px;">
                             <label for="desa_kelurahan" class="form-label">Desa/Kelurahan</label>
@@ -170,11 +171,43 @@ require_once 'template_admin/navbar.php';
                     <div class="row">
                         <div class="col-md-6" style="margin-top: 10px;">
                             <label for="no_hp_wali" class="form-label">No. Handphone Wali Siswa</label>
-                            <input type="text" class="form-control" id="no_hp_wali" name="no_hp_wali" maxlength="13" oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 13)" required>
+                            <input type="text" class="form-control" id="no_hp_wali" name="no_hp_wali" maxlength="13" oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 13)">
                         </div>
                         <div class="col-md-6 ms-auto" style="margin-top: 10px;">
                             <label for="alamat" class="form-label">Alamat</label>
                             <textarea class="form-control" id="alamat" name="alamat" required></textarea>
+                        </div>
+                    </div>
+                    <!-- Data orang Tua -->
+                    <h6 class="my-3"><b>B. Isi Data Orang Tua</b></h6>
+                    <div class="row">
+                        <div class="col-md-6" style="margin-top: 10px;">
+                            <label for="nama_ayah" class="form-label">Nama Ayah Kandung</label>
+                            <input type="text" class="form-control" id="nama_ayah" name="nama_ayah" required>
+                        </div>
+                        <div class="col-md-6" style="margin-top: 10px;">
+                            <label for="nama_ibu" class="form-label">Nama Ibu Kandung</label>
+                            <input type="text" class="form-control" id="nama_ibu" name="nama_ibu" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 ms-auto" style="margin-top: 10px;">
+                            <label for="alamat_ayah" class="form-label">Alamat Ayah</label>
+                            <input type="text" class="form-control" id="alamat_ayah" name="alamat_ayah" required>
+                        </div>
+                        <div class="col-md-6 ms-auto" style="margin-top: 10px;">
+                            <label for="alamat_ibu" class="form-label">Alamat Ibu</label>
+                            <input type="text" class="form-control" id="alamat_ibu" name="alamat_ibu" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 ms-auto" style="margin-top: 10px;">
+                            <label for="no_hp_ayah" class="form-label">No Handphone Ayah</label>
+                            <input type="text" class="form-control" id="no_hp_ayah" name="no_hp_ayah" required>
+                        </div>
+                        <div class="col-md-6 ms-auto" style="margin-top: 10px;">
+                            <label for="no_hp_ibu" class="form-label">No Handphone Ibu</label>
+                            <input type="text" class="form-control" id="no_hp_ibu" name="no_hp_ibu" required>
                         </div>
                     </div>
                     <div class="row">

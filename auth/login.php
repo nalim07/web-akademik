@@ -11,7 +11,7 @@ if (isset($_SESSION["sslogin"])) {
 //proses login
 if (isset($_POST["login"])) {
     $username = $_POST["username"];
-    $password = $_POST["password"];
+    $password = md5($_POST["password"]); // Hash password dengan MD5
 
     $sql = "SELECT * FROM user WHERE 
     username = '$username' AND password = '$password'";
@@ -21,8 +21,6 @@ if (isset($_POST["login"])) {
     //cek username
     if ($result->num_rows > 0) {
         $data = $result->fetch_assoc();
-        if (password_verify($password, $data['password'])) {
-        }
         $_SESSION["ssUser"] = $username;
         $_SESSION["sslogin"] = true;
         header("location: ../admin/dashboard.php");

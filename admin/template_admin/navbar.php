@@ -55,21 +55,14 @@
 
             <!-- Nav Item - Nilai Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseNilai" aria-expanded="true" aria-controls="collapseNilai">
+                <a class="nav-link" href="#">
                     <i class="fas fa-fw fa-clipboard"></i>
                     <span>Nilai Siswa</span>
                 </a>
-                <div id="collapseNilai" class="collapse" aria-labelledby="headingNilai" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Nilai Siswa</h6>
-                        <a class="collapse-item" href="#">Kelas A</a>
-                        <a class="collapse-item" href="#">Kelas B</a>
-                    </div>
-                </div>
             </li>
 
             <!-- Nav Item - Tabungan Menu -->
-            <li class="nav-item">
+            <!-- <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
                     <i class="fas fa-fw fa-folder"></i>
                     <span>Tabungan</span>
@@ -81,7 +74,7 @@
                         <a class="collapse-item" href="#">Kelas B</a>
                     </div>
                 </div>
-            </li>
+            </li> -->
 
             <!-- Divider -->
             <hr class="sidebar-divider">
@@ -93,6 +86,15 @@
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
+
+            <!-- Nav Item - User Menu -->
+            <li class="nav-item">
+                <a class="nav-link" href="<?php echo BASE_URL; ?>admin/data_user.php">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>User</span>
+                </a>
+            </li>
+
 
             <!-- Sidebar Toggler (Sidebar) -->
             <div class="text-center d-none d-md-inline">
@@ -320,12 +322,12 @@
                             <div class="modal-header">
                                 <h5 class="modal-title" id="exampleModalLabel">Anda yakin untuk Keluar?</h5>
                                 <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">×</span>
+                                    <span aria-hidden="true">&times;</span> <!-- Simbol untuk menutup modal -->
                                 </button>
                             </div>
                             <div class="modal-body">Pilih "Keluar" di bawah jika Anda siap untuk mengakhiri sesi saat ini.</div>
                             <div class="modal-footer">
-                                <button class="btn btn-secondary" type="button" data-dismiss="modal">Batal</button>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button> <!-- Perbaikan di sini -->
                                 <a class="btn btn-primary" href="../index.php">Keluar</a>
                             </div>
                         </div>

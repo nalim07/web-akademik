@@ -22,9 +22,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $kab_kota = $_POST['kab_kota'];
     $provinsi = $_POST['provinsi'];
     $agama = $_POST['agama'];
+    $foto_siswa = $_FILES['foto_siswa']['name'];
+    $nama_ayah = $_POST['nama_ayah'];
+    $alamat_ayah = $_POST['alamat_ayah'];
+    $no_hp_ayah = $_POST['no_hp_ayah'];
+    $nama_ibu = $_POST['nama_ibu'];
+    $alamat_ibu = $_POST['alamat_ibu'];
+    $no_hp_ibu = $_POST['no_hp_ibu'];
     $wali_siswa = $_POST['wali_siswa'];
     $no_hp_wali = $_POST['no_hp_wali'];
-    $foto_siswa = $_FILES['foto_siswa']['name'];
     
     if($foto_siswa != "") {
         $ekstensi_diperbolehkan = array('png','jpg','jpeg');
@@ -53,7 +59,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     } else {
         // Jika tidak ada foto yang diupload
-        $query = "INSERT INTO siswa_kelasa (nama_siswa, nis, tanggal_masuk, kelas, tempat_lahir, tanggal_lahir, jenis_kelamin, alamat, desa_kelurahan, kecamatan, kab_kota, provinsi, agama, wali_siswa, no_hp_wali) VALUES ('$nama_siswa', '$nis', '$tanggal_masuk', '$kelas', '$tempat_lahir', '$tanggal_lahir', '$jenis_kelamin', '$alamat', '$desa_kelurahan', '$kecamatan', '$kab_kota', '$provinsi', '$agama', '$wali_siswa', '$no_hp_wali')";
+        $query = "INSERT INTO siswa_kelasa (nama_siswa, nis, tanggal_masuk, kelas, tempat_lahir, tanggal_lahir, jenis_kelamin, alamat, desa_kelurahan, kecamatan, kab_kota, provinsi, agama, nama_ayah, alamat_ayah, no_hp_ayah, nama_ibu, alamat_ibu, no_hp_ibu, wali_siswa, no_hp_wali) VALUES ('$nama_siswa', '$nis', '$tanggal_masuk', '$kelas', '$tempat_lahir', '$tanggal_lahir', '$jenis_kelamin', '$alamat', '$desa_kelurahan', '$kecamatan', '$kab_kota', '$provinsi', '$agama', '$nama_ayah', '$alamat_ayah', '$no_hp_ayah', '$nama_ibu', '$alamat_ibu', '$no_hp_ibu', '$wali_siswa', '$no_hp_wali')";
         $result = mysqli_query($conn, $query);
 
         if(!$result){

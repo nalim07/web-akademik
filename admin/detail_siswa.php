@@ -116,7 +116,7 @@ $siswa = mysqli_fetch_assoc($sql);
                         <div class="tab-content">
                             <div class="tab-pane active" id="student1">
                                 <div class="border-bottom p-2">
-                                    <h6 class="my-3"><b>Data Pribadi Siswa</b></h6>
+                                    <h6 class="my-3"><b>A. Data Pribadi Siswa</b></h6>
                                     <div class="form-group">
                                         <label for="nama_siswa">Nama Lengkap:</label>
                                         <input type="text" class="form-control" id="nama_siswa" value="<?= $siswa['nama_siswa']; ?>" disabled>
@@ -167,11 +167,8 @@ $siswa = mysqli_fetch_assoc($sql);
                                             <input type="text" class="form-control" id="desa_kelurahan" value="<?= $siswa['desa_kelurahan']; ?>" disabled>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane" id="orangtua">
-                                <div class="border-bottom p-2">
-                                    <h6 class="my-3"><b>Data Wali Siswa</b></h6>
+                                    <hr>
+                                    <h6 class="my-3"><b>B. Wali Siswa</b></h6>
                                     <div class="form-group">
                                         <label for="wali_siswa">Nama Wali Siswa:</label>
                                         <input type="text" class="form-control" id="wali_siswa" value="<?= $siswa['wali_siswa']; ?>" disabled>
@@ -179,6 +176,38 @@ $siswa = mysqli_fetch_assoc($sql);
                                     <div class="form-group">
                                         <label for="no_hp_wali">No HP Wali:</label>
                                         <input type="text" class="form-control" id="no_hp_wali" value="<?= $siswa['no_hp_wali']; ?>" disabled>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Data Orang Tua -->
+                            <div class="tab-pane" id="orangtua">
+                                <div class="border-bottom p-2">
+                                    <h6 class="my-3"><b>A. Data Ayah</b></h6>
+                                    <div class="form-group">
+                                        <label for="nama_ayah">Nama Ayah:</label>
+                                        <input type="text" class="form-control" id="nama_ayah" value="<?= $siswa['nama_ayah']; ?>" disabled>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="alamat_ayah">Alamat:</label>
+                                        <input type="text" class="form-control" id="alamat_ayah" value="<?= $siswa['alamat_ayah']; ?>" disabled>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="no_hp_ayah">No Handphone:</label>
+                                        <input type="text" class="form-control" id="no_hp_ayah" value="<?= $siswa['no_hp_ayah']; ?>" disabled>
+                                    </div>
+                                    <hr>
+                                    <h6 class="my-3"><b>B. Data Ibu</b></h6>
+                                    <div class="form-group">
+                                        <label for="nama_ibu">Nama Ibu:</label>
+                                        <input type="text" class="form-control" id="nama_ibu" value="<?= $siswa['nama_ibu']; ?>" disabled>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="alamat_ibu">Alamat:</label>
+                                        <input type="text" class="form-control" id="alamat_ibu" value="<?= $siswa['alamat_ibu']; ?>" disabled>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="no_hp_ibu">No Handphone:</label>
+                                        <input type="text" class="form-control" id="no_hp_ibu" value="<?= $siswa['no_hp_ibu']; ?>" disabled>
                                     </div>
                                 </div>
                             </div>
