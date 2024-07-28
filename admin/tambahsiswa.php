@@ -175,7 +175,7 @@ require_once 'template_admin/navbar.php';
                         </div>
                         <div class="col-md-6 ms-auto" style="margin-top: 10px;">
                             <label for="alamat" class="form-label">Alamat</label>
-                            <textarea class="form-control" id="alamat" name="alamat" required></textarea>
+                            <input class="form-control" id="alamat" name="alamat" required></input>
                         </div>
                     </div>
                     <!-- Data orang Tua -->

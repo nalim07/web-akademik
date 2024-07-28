@@ -12,6 +12,12 @@ $title = "Dashboard - Admin";
 require_once 'template_admin/header.php';
 require_once 'template_admin/navbar.php';
 
+// Query untuk mendapatkan tahun ajaran yang aktif
+$sql_tahun_ajaran = "SELECT tahun_ajaran FROM tbl_ta WHERE status='active' LIMIT 1";
+$result_tahun_ajaran = $conn->query($sql_tahun_ajaran);
+$data_tahun_ajaran = $result_tahun_ajaran->fetch_assoc();
+$active_tahun_ajaran = $data_tahun_ajaran['tahun_ajaran'];
+
 // Query untuk mendapatkan jumlah siswa
 $sql_siswa = "SELECT COUNT(*) as jumlah_siswa FROM tbl_siswa";
 $result_siswa = $conn->query($sql_siswa);
@@ -44,43 +50,83 @@ $jumlah_guru = $data_guru['jumlah_guru'];
         </div>
     </div>
 
-<div class="row">
-    <!-- Jumlah Siswa Card -->
-    <div class="col-xl-3 col-md-6 mb-4">
-        <div class="card border-left-primary shadow h-100 py-2">
-            <div class="card-body">
-                <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                            Jumlah Siswa</div>
-                        <div class="h5 mb-0 font-weight-bold text-gray-800"><?= $jumlah_siswa ?></div>
+    <div class="row">
+        <!-- Tahun Ajaran Aktif Card -->
+        <div class="col-xl-3 col-md-4 mb-4">
+            <div class="card border-left-warning shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                                Tahun Ajaran</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?= $active_tahun_ajaran ? $active_tahun_ajaran : "Tidak ada tahun ajaran aktif" ?></div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-calendar-alt fa-2x text-gray-300"></i>
+                        </div>
                     </div>
-                    <div class="col-auto">
-                        <i class="fas fa-user-graduate fa-2x text-gray-300"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- Jumlah Siswa Card -->
+        <div class="col-xl-3 col-md-4 mb-4">
+            <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                Jumlah Siswa</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?= $jumlah_siswa ?></div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-user-graduate fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Jumlah Guru Card -->
+        <div class="col-xl-3 col-md-4 mb-4">
+            <div class="card border-left-success shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                Jumlah Guru</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?= $jumlah_guru ?></div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-chalkboard-teacher fa-2x text-gray-300"></i>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Jumlah Guru Card -->
-    <div class="col-xl-3 col-md-6 mb-4">
-        <div class="card border-left-success shadow h-100 py-2">
-            <div class="card-body">
-                <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                        <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                            Jumlah Guru</div>
-                        <div class="h5 mb-0 font-weight-bold text-gray-800"><?= $jumlah_guru ?></div>
-                    </div>
-                    <div class="col-auto">
-                        <i class="fas fa-chalkboard-teacher fa-2x text-gray-300"></i>
+    <div class="row">
+        <!-- Kalender Akademik Card -->
+        <div class="col-xl-12 col-md-12 mb-4">
+            <div class="card border-left-info shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
+                                Kalender Akademik</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                <iframe src="https://calendar.google.com/calendar/embed?src=your_calendar_id&ctz=Asia/Jakarta" style="border: 0" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-calendar-alt fa-2x text-gray-300"></i>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
 </div>
 <!-- /.container-fluid -->
